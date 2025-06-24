@@ -1,16 +1,27 @@
 package core.basesyntax.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
-    private List<Smile> smiles;
+    @ManyToMany
+    @JoinTable(
+            name = "comment_smile",
+            joinColumns = @JoinColumn(name = "comment_id"),
+            inverseJoinColumns = @JoinColumn(name = "smile_id")
+    )
+    private List<Smile> smiles = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "user_id") //!
+    private User user;
 
     public Long getId() {
         return id;

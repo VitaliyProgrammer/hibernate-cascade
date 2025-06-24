@@ -1,11 +1,19 @@
 package core.basesyntax.model;
 
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
-    private List<Comment> comments;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)//!
+    private List<Comment> comments = new ArrayList<>();
 
     public Long getId() {
         return id;
