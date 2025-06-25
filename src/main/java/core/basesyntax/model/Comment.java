@@ -1,7 +1,13 @@
 package core.basesyntax.model;
 
-import jakarta.persistence.*;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,5 +51,13 @@ public class Comment {
 
     public void setSmiles(List<Smile> smiles) {
         this.smiles = smiles;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

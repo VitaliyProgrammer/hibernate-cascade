@@ -6,7 +6,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate_cascade?serverTimezone=UTC
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate_database?serverTimezone=UTC
         </property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">root</property>
@@ -14,10 +14,10 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="core.base syntax.model.Comment"/>
-        <mapping class="core.base syntax.model.Smile"/>
-        <mapping class="core.base syntax.model.User"/>
-        <mapping class="core.base syntax.model.Message"/>
-        <mapping class="core.base syntax.model.MessageDetails"/>
+        <mapping class="core.basesyntax.model.Comment"/>
+        <mapping class="core.basesyntax.model.Smile"/>
+        <mapping class="core.basesyntax.model.User"/>
+        <mapping class="core.basesyntax.model.Message"/>
+        <mapping class="core.basesyntax.model.MessageDetails"/>
     </session-factory>
 </hibernate-configuration>

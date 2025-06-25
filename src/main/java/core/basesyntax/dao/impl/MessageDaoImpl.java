@@ -1,11 +1,9 @@
 package core.basesyntax.dao.impl;
 
-import org.hibernate.Session;
 import core.basesyntax.dao.MessageDao;
 import core.basesyntax.model.Message;
-
 import java.util.List;
-
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
@@ -40,10 +38,10 @@ public class MessageDaoImpl extends AbstractDao implements MessageDao {
 
     @Override
     public void remove(Message entity) {
-      try(Session session = factory.openSession()) {
-          Transaction transaction = session.beginTransaction();
-          remove(entity);
-          transaction.commit();
-      }
+        try (Session session = factory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            remove(entity);
+            transaction.commit();
+        }
     }
 }
