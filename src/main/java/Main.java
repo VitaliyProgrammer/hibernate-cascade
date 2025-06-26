@@ -36,7 +36,7 @@ public class Main {
         Comment comment = new Comment();
         comment.setContent("Hello world!");
         comment.setSmiles(List.of(smile1, smile2));
-        comment.setUser(user);
+        //comment.setUser(user);
 
         user.setComments(List.of(comment));
         userDao.create(user);

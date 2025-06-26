@@ -19,6 +19,14 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)//!
     private List<Comment> comments = new ArrayList<>();
 
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
     public Long getId() {
         return id;
     }
@@ -33,13 +41,5 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
     }
 }

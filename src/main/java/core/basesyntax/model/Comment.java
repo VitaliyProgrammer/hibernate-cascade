@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,10 +23,6 @@ public class Comment {
             inverseJoinColumns = @JoinColumn(name = "smile_id")
     )
     private List<Smile> smiles = new ArrayList<>();
-
-    @ManyToOne
-    @JoinColumn(name = "user_id") //!
-    private User user;
 
     public Long getId() {
         return id;
@@ -51,13 +46,5 @@ public class Comment {
 
     public void setSmiles(List<Smile> smiles) {
         this.smiles = smiles;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }
